@@ -1,0 +1,5 @@
+WEB_LINK = "https://stellarburgers.nomoreparties.site/"
+FORGOT_PASSWORD_URL = f"{WEB_LINK}forgot-password"
+RESET_PASSWORD_URL = f"{WEB_LINK}reset-password"
+ORDER_FEED_URL = f"{WEB_LINK}feed"
+LOGIN_SCREEN_URL = f"{WEB_LINK}login"
