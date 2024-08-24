@@ -3,6 +3,7 @@ class HomePageLocators:
     button_constructor = '//p[contains(text(), "Конструктор")]'
     tab_buns = '//span[contains(text(), "Булки")]'
     tab_sauces = '//span[contains(text(), "Соусы")]'
+    cr_bun = '//p[contains(text(), "Краторная булка N-200i")]'
     sauce_spicy_x_image = '//img[@alt="Соус Spicy-X"]'
     sauce_spicy_x_details = '//h2[contains(text(), "Детали ингредиента")]'
     close_details_window_button = '//button[contains(@class, "Modal_modal__close")]'
@@ -14,6 +15,6 @@ class HomePageLocators:
     success_order_modal_window = '//section[contains(@class, "Modal_modal_opened__3ISw4")]'
     success_order_tick_image = '//img[@alt="tick animation"]'
     success_order_cook_text = '//p[contains(text(), "Ваш заказ начали готовить")]'
-    success_order_modal_x_button = ('//button[contains(@class, "Modal_modal__close_modified__3V5XS") and contains('
-                                    '@class, "Modal_modal__close__TnseK")]')
+    success_order_modal_x_button = '//button[contains(@class, "Modal_modal__close")]'
+
 

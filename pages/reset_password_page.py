@@ -14,28 +14,19 @@ class ResetPasswordPage:
 
     def go_to_reset_password_from_login_page(self):
         self.browser.get(WEB_LINK)
-        self.browser.find_element(By.XPATH, HomePageLocators.button_account).click()
-        self.browser.find_element(By.XPATH, PersonalAccountLocators.link_reset_password).click()
-
-    def go_to_reset_password_from_login_page(self):
-        self.browser.get(WEB_LINK)
-
-        # Wait for any overlay or modal to disappear
         WebDriverWait(self.browser, 10).until(
             expected_conditions.invisibility_of_element_located((By.CLASS_NAME, "Modal_modal_overlay__x2ZCr"))
         )
-
-        # Scroll the element into view
         account_button = self.browser.find_element(By.XPATH, HomePageLocators.button_account)
         self.browser.execute_script("arguments[0].scrollIntoView(true);", account_button)
         account_button.click()
-
         reset_password_link = self.browser.find_element(By.XPATH, PersonalAccountLocators.link_reset_password)
         self.browser.execute_script("arguments[0].scrollIntoView(true);", reset_password_link)
         reset_password_link.click()
 
     def assert_reset_password_opened(self):
-        assert self.browser.current_url == FORGOT_PASSWORD_URL, f"URL doesn't change to expected. Current URL: {self.browser.current_url}"
+        assert self.browser.current_url == FORGOT_PASSWORD_URL, \
+            f"URL doesn't change to expected. Current URL: {self.browser.current_url}"
 
     def input_email(self, email):
         self.browser.find_element(By.XPATH, ForgotPasswordLocators.input_email).send_keys(email)

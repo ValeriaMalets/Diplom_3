@@ -1,3 +1,4 @@
+import allure
 from config import WEB_LINK
 from pages.reset_password_page import ResetPasswordPage
 from tests.test_data import EMAIL
@@ -5,12 +6,14 @@ from tests.test_data import EMAIL
 
 class TestStellarBurgersResetPassword:
 
+    @allure.title("Go to Reset Password Screen")
     def test_go_to_reset_password_screen(self, browser):
         browser.get(WEB_LINK)
         reset_password_page = ResetPasswordPage(browser)
         reset_password_page.go_to_reset_password_from_login_page()
         reset_password_page.assert_reset_password_opened()
 
+    @allure.title("Reset Password - Input Email")
     def test_reset_password_input_email(self, browser):
         browser.get(WEB_LINK)
         reset_password_page = ResetPasswordPage(browser)
@@ -19,6 +22,7 @@ class TestStellarBurgersResetPassword:
         reset_password_page.submit_reset_password()
         reset_password_page.assert_input_new_password_page_opened()
 
+    @allure.title("Toggle Password Visibility Activation")
     def test_toggle_password_visibility_activation(self, browser):
         browser.get(WEB_LINK)
         reset_password_page = ResetPasswordPage(browser)
